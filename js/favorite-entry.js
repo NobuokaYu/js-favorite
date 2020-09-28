@@ -203,8 +203,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     function handleDragStart(e) {
       dragSrcEl = this;
+      console.log(dragSrcEl);
       e.dataTransfer.effectAllowed = 'move';
       e.dataTransfer.setData('text/html', this.outerHTML);
+      console.log(this.outerHTML);
       this.style.opacity = '0.4';
     };
 
@@ -241,15 +243,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
       if (e.stopPropagation) {
         e.stopPropagation();
       };
+      console.log(e);
 
       let rect = this.getBoundingClientRect();
       if(dragSrcEl != this){
         if ((e.clientY - rect.top) < (this.clientHeight / 2)) {  //(マウスポインターの位置 - div要素の上辺の位置)<(div要素の高さの半分)
     			//マウスカーソルの位置が要素の半分より上
             this.parentNode.removeChild(dragSrcEl);
+
             var dropHTML = e.dataTransfer.getData('text/html');
+            console.log(dropHTML);
             this.insertAdjacentHTML('beforebegin', dropHTML);
-            var dropElem = this.previousSibling;
+            var dropElem = this.previousElementSibling;
             addDnDHandlers(dropElem);
             var dropElemButton = dropElem.getElementsByTagName("button")[0];
             var dropElemUrl = dropElemButton.name;
@@ -273,6 +278,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             this.parentNode.removeChild(dragSrcEl);
             var dropHTML = e.dataTransfer.getData('text/html');
             this.insertAdjacentHTML('afterend', dropHTML);
+            console.log(dropHTML);
             var dropElem = this.nextElementSibling;
             console.log(dropElem);
             addDnDHandlers(dropElem);

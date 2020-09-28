@@ -174,7 +174,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             this.parentNode.removeChild(dragSrcEl);
             var dropHTML = e.dataTransfer.getData('text/html');
             this.insertAdjacentHTML('beforebegin', dropHTML);
-            var dropElem = this.previousSibling;
+            var dropElem = this.previousElementSibling;
             addDnDHandlers(dropElem);
             var dropElemButton = dropElem.getElementsByTagName("button")[0];
             var dropElemUrl = dropElemButton.name;
@@ -198,7 +198,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             this.parentNode.removeChild(dragSrcEl);
             var dropHTML = e.dataTransfer.getData('text/html');
             this.insertAdjacentHTML('afterend', dropHTML);
-            var dropElem = this.nextSibling;
+            var dropElem = this.nextElementSibling;
             addDnDHandlers(dropElem);
             var dropElemButton = dropElem.getElementsByTagName("button")[0];
             var dropElemUrl = dropElemButton.name;
