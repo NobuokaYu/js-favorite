@@ -1,0 +1,66 @@
+.container {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+#favoritedList {
+  margin-bottom: 10px;
+}
+
+#favoritedList > p {
+  color: #a72424;
+  font-weight: bold;
+}
+
+#favoritedList a {
+  color: gray;
+  width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#favoritedList > div {
+  padding: 4px 0px;
+}
+
+#favoritedList button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #a72424;
+  padding: 0 0 0 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#favoritedList .Hum {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+}
+
+#favoritedList .Hum span {
+  display: block;
+  height: 2px;
+  width: 15px;
+  background-color: black;
+}
+
+#favoritedList .Hum span:nth-child(1) {
+  transform: translateY(-3px);
+}
+
+#favoritedList .Hum span:nth-child(3) {
+  transform: translateY(3px);
+}
+
+button[name="favorite"] {
+  background-color: inherit;
+  color: gray;
+  font-size: 1rem;
+  padding: 10px 30px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid black;
+}
